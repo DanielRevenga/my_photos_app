@@ -1,0 +1,41 @@
+@import "generalProperties";
+
+#MainNavigation{
+    margin-bottom: 30px;
+}
+
+.container{
+    background-color: #d4cece;
+    padding: 12 8;
+}
+
+.icon{
+    margin-right: 20px;
+}
+
+.buttons{
+    margin-top: 40px;
+}
+
+.toolbar{
+    color: black;
+    background-color: #d1caca;
+    justify-content: flex-start;
+    height: 8vh;
+
+    .toolbarRight{
+        margin-left: auto;
+
+        button{
+            &:first-child{
+                margin-right: 10px;
+            }
+        }
+    }
+}
+
+a{
+    font-size: 1.3em;
+    color: white;
+    text-decoration: none;
+}

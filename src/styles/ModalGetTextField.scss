@@ -1,0 +1,28 @@
+@import "generalProperties";
+
+#ModalGetTextField{
+
+
+    .box{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        color: #3180da;
+        transform: translate(-50%, -50%);
+        width: 400px;
+        background-color: #1a1818;
+        border: 2px solid #000;
+        box-shadow: 24;
+        padding: 12px;
+
+        label{
+            color: #3180da;
+        }
+
+        .gridModalInput{            
+            border: 1px solid #3180da;
+            border-top: transparent;
+            color: white;
+        }
+    }
+}

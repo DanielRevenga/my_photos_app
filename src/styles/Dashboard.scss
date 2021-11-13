@@ -1,0 +1,32 @@
+@import "generalProperties";
+
+.container{
+    background-color: #d4cece;
+    padding: 12 8;
+}
+
+.icon{
+    margin-right: 20px;
+}
+
+.buttons{
+    margin-top: 40px;
+}
+
+.cardGrid{
+    padding: 20px 0;
+}
+
+.card{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.cardMedia{
+    padding-top: 56.25%; // 16:9
+}
+
+.cardContent{
+    flex-grow: 1;
+}
