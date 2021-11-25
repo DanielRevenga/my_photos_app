@@ -1,22 +1,25 @@
 import { Container, FormControl, InputLabel, MenuItem, Select } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 
 import "../styles/SelectOrder.scss";
 
-function SelectOrder(props) {
+// let selectedItem="";
 
-    let selectedItem = "";
+function SelectOrder(props) {  
+
+    const [selectedItem, setSelectedItem] = useState("");
 
     function selectChangeHandler(e) {
-        selectedItem = e.target.value;
-        console.log("buenas tardes");console.log(selectedItem);
-        props.sortPhotos(selectedItem);
+        const selectedItem2 = e.target.value;
+        setSelectedItem(selectedItem2);
+        props.sortPhotos(selectedItem2);
     }
 
     return (
-        <Container>
+        <Container id="selectOrder">
             <FormControl fullWidth>
                 <InputLabel id="sortSelect-label">Sort Photos By</InputLabel>
+          
                 <Select
                     labelId="sortSelect-label"
                     id="sortSelect"
@@ -24,10 +27,10 @@ function SelectOrder(props) {
                     label="Sort"
                     onChange={selectChangeHandler}
                 >
-                    <MenuItem {selectedItem} value="date">Date</MenuItem>
-                    <MenuItem {!!selectedItem == "width" ? "selected"  : ""} value="width">Width</MenuItem>
-                    <MenuItem {!!selectedItem == "height" ? "selected"  : ""} value="height">Height</MenuItem>
-                    <MenuItem {!!selectedItem == "likes" ? "selected"  : ""} value="likes">Likes</MenuItem>
+                    <MenuItem value="imported_date">Date</MenuItem>
+                    <MenuItem value="width">Width</MenuItem>
+                    <MenuItem value="height">Height</MenuItem>
+                    <MenuItem value="likes">Likes</MenuItem>
                 </Select>
             </FormControl>
         </Container>

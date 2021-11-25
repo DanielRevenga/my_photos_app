@@ -2,22 +2,47 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const searchTermSlice = createSlice({
     name: "searchTerm",
-    initialState: "",
+    initialState: {
+        dashboardTerm: "",
+        myPhotosTerm: ""
+    },
     reducers: {
-        setSearchTerm: (state, action) => {
-            return action.payload;
+        setSearchDashboardTerm: (state, action) => {
+            state.dashboardTerm = action.payload;
         },
-        clearSearchTerm: (state, action) => {
-            return "";
+        setSearchMyPhotosTerm: (state, action) => {
+            state.myPhotosTerm = action.payload;
+        },
+        clearSearchDashboardTerm: (state, action) => {
+            state.dashboardTerm = "";
+        },
+        clearSearchMyPhotosTerm: (state, action) => {
+            state.myPhotosTerm = "";
         }
     }
 });
 
-export const selectSearchTerm = (state) => state.searchTerm;
+export const selectSearchDashboardTerm = (state) => {
+    // console.log("gfgf");
+    // console.log(state.searchTerm);
+    return state.searchTerm.dashboardTerm;
+}
+
+export const selectSearchMyPhotosTerm = (state) => {
+    // console.log("gfgf");
+    // console.log("selectSearchMyPhotosTerm");
+    // console.log(state);
+    // console.log(state.searchTerm);
+    // console.log(state.searchTerm.myPhotosTerm);
+    // console.log("----------------");
+    return state.searchTerm.myPhotosTerm;
+}
 
 export const{
-    setSearchTerm,
-    clearSearchTerm
+    setSearchDashboardTerm,
+    setSearchMyPhotosTerm,
+    clearSearchDashboardTerm,
+    clearSearchMyPhotosTerm
 } = searchTermSlice.actions;
 
 export default searchTermSlice.reducer;

@@ -1,5 +1,68 @@
 @import "generalProperties";
 
-.buttonGroup{
-    margin: auto;
+#Card{
+    .cardMedia{
+        height: 300px;
+        // display: flex;
+
+        &:hover{
+            // -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+            filter: saturate(220%);
+            cursor: pointer;
+        }
+    }
+
+    .saturate{       
+        &:hover{
+            // -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+            filter: saturate(220%);
+            cursor: pointer;
+        }
+
+        img{
+            margin: 0;
+            padding: 0;
+            height: 300px;
+            width: 300px;            
+        }
+    }
+
+    .cardContent{
+        background-color: #f0eeee;
+
+        .boxS{
+            box-shadow: inset 5px 30px 81px -6px rgba(201,197,201,1);
+            border-radius: 4px;
+            background-color: #e6e0e0ec;
+            padding: 4px;
+            
+            &.desc{
+                height: 70px;
+                overflow: hidden;
+                margin-bottom: 8px;
+
+                &:hover{
+                    overflow: auto;
+                }
+            }
+
+            &.data{
+                text-align: center;
+                
+
+                span{
+                    font-weight: bold;
+                }
+            }
+                  
+        }         
+    }
+    
+    
+
+    .buttonGroup{
+        margin: auto;
+    }
+    
 }
+

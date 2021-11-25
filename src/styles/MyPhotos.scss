@@ -1,0 +1,17 @@
+@import "./generalProperties";
+
+#myPhotos{
+    .filterHeader{
+        // margin: auto;
+        // width: 72.5%;
+        #Search{
+            width: 55%;
+            float: left;
+        }
+        #selectOrder{
+            width: 40%;
+            float: right;
+        }
+    }
+ 
+}

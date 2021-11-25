@@ -13,10 +13,10 @@ function ModalGetText(props) {
     }
 
     function editPhotoHandler(e) {
-        console.log("Modal:");
-        console.log(props.photo);
+        // console.log("Modal:");
+        // console.log(props.photo);
         let newPhoto = {id: props.photo.id, description: inputValue};
-        console.log(props.photo);
+        // console.log(props.photo);
         props.editPhoto(newPhoto);
         props.closeHandler();
     }

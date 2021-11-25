@@ -1,5 +1,5 @@
-import React from "react";
-import { Button, Container, TextField } from "@mui/material";
+import React, { useEffect, useState } from "react";
+import { Container, TextField } from "@mui/material";
 import { Box } from "@mui/system";
 import SearchIcon from '@mui/icons-material/Search';
 
@@ -7,16 +7,21 @@ import "../styles/SearchTerm.scss";
 
 function SearchTerm(props) {
 
-    let term = "";
+    // let term = "2";
+    const [term, setTerm] = useState("");
+    
+    useEffect(() => {
+        props.setSearchTerm(term);
+    }, [term]);
 
     function textFieldChangeHandler(e) {
-        
-        term = e.target.value;
-        props.getPhotos(term);  
-    }
-
-    function searchTermHandler(e) {
-        // props.getPhotos(term);  
+        const term2 = e.target.value;
+        // props.setSearchTerm(term2);
+        // term = term2;
+        props.setSearchTerm(term);
+        setTerm(term2);
+        props.setSearchTerm(term);
+        props.getPhotos(term2, 1);
     }
 
     return (
@@ -26,19 +31,11 @@ function SearchTerm(props) {
                 <TextField 
                     id="search" 
                     label={props.searchPlaceholder} 
+                    value={term}
                     variant="standard" 
                     fullWidth  
                     onChange={textFieldChangeHandler}
                 />
-
-                <Button
-                    id="search-button"
-                    variant="contained"
-                    color="primary"
-                    onClick={searchTermHandler}
-                > 
-                    Search 
-                </Button>
             </Box>          
         </Container>
     );

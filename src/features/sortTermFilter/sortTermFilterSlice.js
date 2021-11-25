@@ -9,7 +9,6 @@ const sortTermFilterSlice = createSlice({
         setSortTerm: (state, action) => {
             return action.payload;
         },
-        
     },
 });
 
